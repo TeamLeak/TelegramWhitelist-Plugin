@@ -1,0 +1,14 @@
+name: TelegramWhitelist
+version: '1.0-SNAPSHOT'
+main: com.github.saintedlittle.twhitelist
+api-version: '1.20'
+commands:
+  blockuser:
+    description: Blocks a specific user from being whitelisted
+    usage: /blockuser <username>
+    permission: "tgwhitelist.blockuser"
+
+  blockallusers:
+    description: Blocks all accounts with a specific username
+    usage: /blockallusers <username>
+    permission: "tgwhitelist.blockalluser"
