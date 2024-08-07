@@ -23,6 +23,8 @@ dependencies {
     implementation("org.telegram:telegrambots:6.1.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
+
+    implementation(kotlin("reflect"))
 }
 
 val targetJavaVersion = 21

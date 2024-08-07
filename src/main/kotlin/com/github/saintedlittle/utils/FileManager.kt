@@ -32,7 +32,8 @@ class FileManager(private val plugin: JavaPlugin) {
                 {
                     "language": "en",
                     "bot_token": "",
-                    "botUsername": ""
+                    "botUsername": "",
+                    "admin_list": [123456789, 987654321]
                 }
             """.trimIndent()
             configFile.writeText(defaultConfig)
