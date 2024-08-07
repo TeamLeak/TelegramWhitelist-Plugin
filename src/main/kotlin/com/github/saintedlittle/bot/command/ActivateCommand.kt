@@ -14,7 +14,10 @@ class ActivateCommand : Command("/activate") {
 
         val message = SendMessage().apply {
             this.chatId = chat?.id.toString()
-            text = "Available commands:\n/start - Start the bot\n/help - Show this help message"
+            text = """Available commands:
+                   /start - Start the bot
+                   /help - Show this help message
+                   """
         }
 
         try {

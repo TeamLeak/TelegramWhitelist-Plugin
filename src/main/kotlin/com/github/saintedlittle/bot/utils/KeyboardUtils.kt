@@ -9,10 +9,6 @@ import kotlin.reflect.full.findAnnotation
 
 object CreateKeyboard {
 
-    fun createKeyboardRow(buttons: List<KeyboardButton>): KeyboardRow {
-        return KeyboardRow(buttons)
-    }
-
     fun createReplyKeyboard(rows: List<KeyboardRow>): ReplyKeyboardMarkup {
         return ReplyKeyboardMarkup().apply {
             resizeKeyboard = true
@@ -26,8 +22,8 @@ object KeyboardUtil {
     fun createKeyboardFromAnnotation(clazz: KClass<*>): ReplyKeyboardMarkup? {
         val annotation = clazz.findAnnotation<KeyboardLayout>() ?: return null
 
-        val rows = annotation.rows.map { row ->
-            KeyboardRow(row.split(",").map { KeyboardButton(it) })
+        val rows = annotation.rows.map {
+            row -> return@map KeyboardRow(with(row) { split(",").map(::KeyboardButton) })
         }
 
         return CreateKeyboard.createReplyKeyboard(rows)
